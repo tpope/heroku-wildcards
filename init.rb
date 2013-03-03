@@ -37,14 +37,14 @@ class << Heroku::Command
       pattern = git("config heroku.remote")[/.+/]
     end
 
-    if pattern.to_s.include?('*')
+    if pattern.to_s.include?('*') || pattern.to_s.include?(',')
       found = false
       if option == '--remote'
         Heroku::Command::Base.allocate.send(:git_remotes).to_a
       else
         Heroku::Auth.api.get_apps.body.map { |a| [a['name'], a['name']] }
       end.each do |candidate, app|
-        if File.fnmatch?(pattern, candidate)
+        if pattern.split(',').any? { |glob| File.fnmatch?(glob, candidate) }
           found = true
           if $stdout.tty? && ENV['TERM'] != 'dumb'
             display("\e[01m# #{app}\e[00m")

@@ -12,7 +12,11 @@ Run a command across multiple apps by including `*` in the app name.
     web.1: up 2013/03/02 11:53:30 (~ 9h ago)
     web.2: up 2013/03/02 11:56:05 (~ 9h ago)
 
-You can also match against the Git remote name:
+You can also use commas for more precise specification:
+
+    $ heroku maintenance:on -a thing1,thing2
+
+Or match against the Git remote name:
 
     $ heroku info -r*
 
