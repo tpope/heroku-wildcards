@@ -20,6 +20,11 @@ Or match against the Git remote name:
 
     $ heroku info -r*
 
+Try it with the [Heroku binstubs](https://github.com/tpope/heroku-binstubs)
+plugin:
+
+    $ heroku binstubs:create 'myapp-*' --as each-env
+
 ## Installation
 
     heroku plugins:install https://github.com/tpope/heroku-wildcards.git
