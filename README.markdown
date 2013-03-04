@@ -29,6 +29,16 @@ plugin:
 
     heroku plugins:install https://github.com/tpope/heroku-wildcards.git
 
+## Bonus feature
+
+    $ heroku --app myapp run console
+     !    `--app` is not a heroku command.
+     !    Perhaps you meant `--help` or `apps`.
+     !    See `heroku help` for a list of available commands.
+
+Don't you just hate that?  Well, since I was already monkeying with the
+dispatcher, I went ahead and fixed it.
+
 ## License
 
 Copyright © Tim Pope.  MIT License.  See LICENSE for details.

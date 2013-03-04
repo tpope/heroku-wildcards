@@ -4,6 +4,14 @@ class << Heroku::Command
 
   alias boring_old_wildcard_free_run run
   def run(cmd, original_args=[])
+    if cmd =~ /^-([ar]|-app|-remote)$/
+      original_args.unshift(cmd)
+      cmd = original_args.delete_at(2) || 'help'
+    elsif cmd =~ /^-/
+      original_args.unshift(cmd)
+      cmd = original_args.delete_at(1) || 'help'
+    end
+
     option = '--app'
     pattern = ENV['HEROKU_APP']
     args = original_args.dup
