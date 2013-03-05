@@ -1,5 +1,11 @@
 # Heroku wildcards
 
+> Charlie: You're not letting the wild card do his thing.  
+> Dennis: Is there any reason behind what you're doing?  
+> Charlie: Wild card.
+>
+> — *It's Always Sunny in Philadelphia*.
+
 Run a command across multiple apps by including `*` in the app name.
 
     $ heroku ps --app=myapp-*
