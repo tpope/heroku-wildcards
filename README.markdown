@@ -18,7 +18,7 @@ You can also use commas for more precise specification:
 
 Or match against the Git remote name:
 
-    $ heroku info -r*
+    $ heroku config:set -r* BUILDPACK_URL=https://github.com/tpope/heroku-buildpack-ruby-tpope
 
 Try it with the [Heroku binstubs](https://github.com/tpope/heroku-binstubs)
 plugin:
