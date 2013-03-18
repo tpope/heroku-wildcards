@@ -19,21 +19,21 @@ class << Heroku::Command
       case arg
       when '--'
         break
-      when /^-(?:a|-app=)(.*)$/
-        pattern = $1
-        args.delete_at(i)
-        break
       when /^-(?:a|-app)$/
         pattern = args.delete_at(i+1)
         args.delete_at(i)
         break
-      when /^-(?:r|-remote=)(.*)$/
-        pattern = $1
+      when /^-(?:r|-remote)$/
+        pattern = args.delete_at(i+1)
         args.delete_at(i)
         option = '--remote'
         break
-      when /^-(?:r|-remote)$/
-        pattern = args.delete_at(i+1)
+      when /^-(?:a|-app=)(.*)$/
+        pattern = $1
+        args.delete_at(i)
+        break
+      when /^-(?:r|-remote=)(.*)$/
+        pattern = $1
         args.delete_at(i)
         option = '--remote'
         break
