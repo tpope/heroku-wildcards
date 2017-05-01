@@ -33,7 +33,10 @@ plugin:
 
 ## Installation
 
-    heroku plugins:install https://github.com/tpope/heroku-wildcards.git
+    cd ~/.heroku/plugins
+    git clone https://github.com/tpope/heroku-wildcards.git
+
+Requires a version of the Heroku CLI with legacy Ruby support.
 
 ## Bonus feature
 
